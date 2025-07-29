@@ -7,6 +7,7 @@ import { Chrome, Mail, CheckCircle, ArrowRight } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 const WaitlistSection = () => {
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -27,12 +28,16 @@ const WaitlistSection = () => {
     setIsLoading(true);
     
     try {
-      const response = await fetch('/api/functions/v1/subscribe-to-waitlist', {
+      const response = await fetch('https://umnmvwyxjxswwidueaqy.supabase.co/functions/v1/newsletter-subscribe', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ 
+          name: name.trim() || undefined,
+          email,
+          groupId: "154366128875898210"
+        }),
       });
 
       const data = await response.json();
@@ -108,28 +113,38 @@ const WaitlistSection = () => {
         </p>
         
         <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8">
-          <div className="flex gap-3">
+          <div className="flex flex-col gap-3">
             <Input
-              type="email"
-              placeholder="your.email@dev.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 font-mono bg-background"
+              type="text"
+              placeholder="Your name (optional)"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="font-mono bg-background"
               disabled={isLoading}
             />
-            <Button 
-              type="submit" 
-              disabled={isLoading}
-              className="font-mono font-semibold"
-            >
-              {isLoading ? (
-                "Joining..."
-              ) : (
-                <>
-                  Join <ArrowRight className="ml-2 h-4 w-4" />
-                </>
-              )}
-            </Button>
+            <div className="flex gap-3">
+              <Input
+                type="email"
+                placeholder="your.email@dev.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="flex-1 font-mono bg-background"
+                disabled={isLoading}
+              />
+              <Button 
+                type="submit" 
+                disabled={isLoading}
+                className="font-mono font-semibold"
+              >
+                {isLoading ? (
+                  "Joining..."
+                ) : (
+                  <>
+                    Join <ArrowRight className="ml-2 h-4 w-4" />
+                  </>
+                )}
+              </Button>
+            </div>
           </div>
         </form>
         
