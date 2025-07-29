@@ -26,16 +26,36 @@ const WaitlistSection = () => {
 
     setIsLoading(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitted(true);
-    setIsLoading(false);
-    
-    toast({
-      title: "Welcome to the waitlist! 🎉",
-      description: "We'll notify you as soon as pin'npm is ready.",
-    });
+    try {
+      const response = await fetch('/api/functions/v1/subscribe-to-waitlist', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to subscribe');
+      }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Welcome to the waitlist! 🎉",
+        description: "We'll notify you as soon as pin'npm is ready.",
+      });
+    } catch (error) {
+      console.error('Subscription error:', error);
+      toast({
+        title: "Subscription failed",
+        description: "Please try again later or contact support.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {

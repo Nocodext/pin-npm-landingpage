@@ -29,9 +29,9 @@ const Hero = () => {
               <Chrome className="mr-2 h-5 w-5" />
               Add to Chrome
             </Button>
-            <a variant="outline" size="lg" className="font-mono" href="#waitlist">
-              Join the waitlist
-            </a>
+            <Button variant="outline" size="lg" className="font-mono" asChild>
+              <a href="#waitlist">Join the waitlist</a>
+            </Button>
           </div>
           
           <div className="mt-8 flex items-center gap-4 justify-center lg:justify-start text-sm text-muted-foreground">
