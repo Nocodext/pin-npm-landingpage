@@ -40,7 +40,7 @@ const WaitlistSection = () => {
 
   if (isSubmitted) {
     return (
-      <section className="container mx-auto px-4 py-16">
+      <section className="container mx-auto px-4 py-16" id="waitlist">
         <Card className="max-w-2xl mx-auto text-center border-primary/20 bg-primary/5">
           <CardContent className="p-12">
             <div className="w-16 h-16 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center">
