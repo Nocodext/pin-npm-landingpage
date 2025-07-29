@@ -112,39 +112,37 @@ const WaitlistSection = () => {
           No spam, just updates on development progress.
         </p>
         
-        <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8">
-          <div className="flex flex-col gap-3">
+        <form onSubmit={handleSubmit} className="max-w-2xl mx-auto mb-8">
+          <div className="flex gap-3">
             <Input
               type="text"
-              placeholder="Your name (optional)"
+              placeholder="Name (optional)"
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="font-mono bg-background"
               disabled={isLoading}
             />
-            <div className="flex gap-3">
-              <Input
-                type="email"
-                placeholder="your.email@dev.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="flex-1 font-mono bg-background"
-                disabled={isLoading}
-              />
-              <Button 
-                type="submit" 
-                disabled={isLoading}
-                className="font-mono font-semibold"
-              >
-                {isLoading ? (
-                  "Joining..."
-                ) : (
-                  <>
-                    Join <ArrowRight className="ml-2 h-4 w-4" />
-                  </>
-                )}
-              </Button>
-            </div>
+            <Input
+              type="email"
+              placeholder="your.email@dev.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="flex-1 font-mono bg-background"
+              disabled={isLoading}
+            />
+            <Button 
+              type="submit" 
+              disabled={isLoading}
+              className="font-mono font-semibold"
+            >
+              {isLoading ? (
+                "Joining..."
+              ) : (
+                <>
+                  Join <ArrowRight className="ml-2 h-4 w-4" />
+                </>
+              )}
+            </Button>
           </div>
         </form>
         
