@@ -1,6 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Code, Github, Wifi } from "lucide-react";
+import { Code, Github, Terminal } from "lucide-react";
 
 const ComingSoon = () => {
   const upcomingFeatures = [
@@ -17,9 +17,9 @@ const ComingSoon = () => {
       status: "Coming soon"
     },
     {
-      icon: Wifi,
-      title: "Offline mode",
-      description: "Access your pinned packages even when you're offline",
+      icon: Terminal,
+      title: "CLI integration",
+      description: "Generate package.json from your pins directly via command line",
       status: "Planned"
     }
   ];

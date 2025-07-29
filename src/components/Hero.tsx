@@ -40,9 +40,9 @@ const Hero = () => {
               <span>Free forever</span>
             </div>
             <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-            <span>No signup required</span>
+            <span>No personal data collected</span>
             <div className="w-1 h-1 bg-muted-foreground rounded-full"></div>
-            <span>Privacy focused</span>
+            <span>Open source</span>
           </div>
         </div>
         
