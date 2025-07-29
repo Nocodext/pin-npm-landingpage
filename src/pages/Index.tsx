@@ -2,6 +2,7 @@ import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import ComingSoon from "@/components/ComingSoon";
 import Differentiator from "@/components/Differentiator";
+import WaitlistSection from "@/components/WaitlistSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -11,6 +12,7 @@ const Index = () => {
       <Features />
       <ComingSoon />
       <Differentiator />
+      <WaitlistSection />
       <Footer />
     </div>
   );
