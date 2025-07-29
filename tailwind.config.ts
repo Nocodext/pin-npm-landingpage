@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'mono': ['JetBrains Mono', 'monospace'],
-				'sans': ['JetBrains Mono', 'monospace'], // Use JetBrains Mono everywhere
+				'mono': ['Fira Code', 'monospace'],
+				'sans': ['Fira Code', 'monospace'], // Use Fira Code everywhere
 			},
 			colors: {
 				border: 'hsl(var(--border))',
