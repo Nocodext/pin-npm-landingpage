@@ -119,7 +119,7 @@ const WaitlistSection = () => {
               placeholder="Name (optional)"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="font-mono bg-background"
+              className="flex-1 font-mono bg-background"
               disabled={isLoading}
             />
             <Input
