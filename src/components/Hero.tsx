@@ -9,9 +9,6 @@ const Hero = () => {
       <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
         {/* Left Content */}
         <div className="flex-1 text-center lg:text-left">
-          <Badge variant="secondary" className="mb-6 font-mono text-sm">
-            🚀 Chrome Extension
-          </Badge>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
             Your personal{" "}
@@ -54,11 +51,6 @@ const Hero = () => {
               alt="pin'npm Chrome extension mockup showing pin button on npm package page"
               className="w-full h-auto rounded-lg shadow-2xl border border-border"
             />
-            <div className="absolute -top-4 -right-4 animate-glow">
-              <Badge className="bg-primary text-primary-foreground font-mono font-semibold">
-                📌 Pin button
-              </Badge>
-            </div>
           </div>
         </div>
       </div>
