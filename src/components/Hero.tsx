@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Chrome, Pin } from "lucide-react";
-import mockupImage from "@/assets/npm-mockup.jpg";
+const mockupImage = "/lovable-uploads/6bd129c3-bef9-402b-b5bd-4e3ce2063e8d.png";
 
 const Hero = () => {
   return (
